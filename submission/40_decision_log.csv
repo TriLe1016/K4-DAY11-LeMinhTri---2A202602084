@@ -1,1 +1,10 @@
 id,date,question,decision,rationale,status
+D01,2026-09-29,Task parking: vạch mảnh dài chạy ngang bãi có phải parking_line?,Không vẽ; giữ các vạch chéo chia ô,"Các vạch chéo cắt qua vạch dài từ hai phía → đó là vạch cuối chung của hai dãy ô, không ngăn hai ô cạnh nhau (parking/observations.md)",closed
+D02,2026-09-29,Khóa C0 khi còn thiếu lens_border và box lỏng?,"Khóa nguyên trạng để hiệu chuẩn, không relock","C0 là vòng hiệu chuẩn; lỗi được ghi thành finding calib (lens_border P0, 3 BOX_GEOMETRY) và áp dụng cho P2 — bản r1_craft đủ 2 lens_border mỗi frame",closed
+D03,2026-09-29,Có vẽ K12 (polygon fill ratio) ở P2?,"Bỏ K12, ghi degrade k12",Ưu tiên thời gian cho box/attribute của 3 frame; K12 là mục cắt đầu tiên theo docs/08-degrade-vi.md,closed
+D04,2026-09-29,P3: chờ file của Vũ hay cold review?,Cold review bản khóa của mình (mã 3C78-0F20),Quá 5 phút chưa nhận được file B3-dense; docs/03-roles-rotation-vi.md cho phép cold review,closed
+D05,2026-09-29,102750 L5: xóa box vì reference không có?,"Giữ box, escalate cho qa (Ticket 1)","Tuk-tuk cao 54 px nhìn rõ, model M6 cũng thấy vật; reference không có box hay ignore ở đó → nghi E0_reference_defect",escalated
+D06,2026-09-29,Model gán xe ba bánh thành Car/Truck: sửa nhãn hay báo ai_team?,Không đổi nhãn người; escalate Ticket 2 cho ai_team,"Model không có class ThreeWheeler, lệch taxonomy lặp lại ở cả 3 frame; R04 vẫn là chuẩn nhãn",escalated
+D07,2026-09-29,060000 L2 (box prefill xe điện) cắt bánh trước: có sửa khi rework?,Giữ nguyên (keep_with_reason),Reference R3 giữ đúng box prefill và ghép khớp; sửa sẽ làm lệch reference mà không có rule nói rõ,closed
+D08,2026-09-29,060000 L5 nằm ~48% trong vùng unreadable của reference,Giữ box trong bản khóa; đề xuất patch R06,Rule hiện tại không định nghĩa khi nào cụm vật mờ là unreadable (20_guideline_patch.md),open
+D09,2026-09-29,"P5: rework bao nhiêu ca khi hết giờ?","degrade rework; chỉ sửa 102750 L1 (truncated/occluded), khóa 0667-1BE0","Ca có căn cứ rõ nhất (R05 + reference + QA); các ca còn lại giữ action=rework, ghi trong rework/delta.md",closed

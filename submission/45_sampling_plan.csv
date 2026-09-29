@@ -1,9 +1,9 @@
 camera_id,slice_type,frames,risk,rationale
-front,normal,,TODO,TODO
-front,hard,,TODO,TODO
-rear,normal,,TODO,TODO
-rear,hard,,TODO,TODO
-left,normal,,TODO,TODO
-left,hard,,TODO,TODO
-right,normal,,TODO,TODO
-right,hard,,TODO,TODO
+front,normal,20,"Thấp–trung bình: cảnh phía trước giống góc nhìn ADASIND, vật đa số ở zone center/mid",Giữ đủ mẫu nền để đo drift so với hard; không cần nhiều vì camera trước gần với dữ liệu đã có kinh nghiệm gán nhãn
+front,hard,25,"Trung bình–cao: vật sát mũi xe bị vòng kính cắt (truncated), người băng qua trước xe, ngược sáng/lóa",Lỗi dễ gặp là box không bám phần nhìn thấy ở rìa méo và thiếu truncated; hard nhiều hơn normal nhưng ít hơn rear/side vì tầm nhìn trước ít điểm mù
+rear,normal,20,"Trung bình: lùi xe trong bãi đỗ, cảnh chủ yếu mặt đường và ô đỗ","Cần mẫu nền riêng cho camera sau vì góc lắp, thân xe (ego_body) và vòng kính khác camera trước; không suy từ camera trước"
+rear,hard,35,"Cao: người/trẻ em/xe hai bánh sát đuôi xe khi lùi, ban đêm, ống kính bẩn mưa/bùn","Nhiều nhất vì rủi ro va chạm khi lùi cao, vật gần thường ở zone edge méo mạnh và bị che; cần đủ ca để soát missing box và occluded"
+left,normal,20,"Trung bình: xe/lề đường chạy song song, vạch đỗ bên hông","Mẫu nền cho camera hông trái; ego_body (gương, sườn xe) chiếm phần lớn khung nên cần kiểm ignore_region riêng"
+left,hard,30,"Cao: seam góc trước-trái và sau-trái, người mở cửa/xe máy vượt sát hông, curb sát bánh",Vật ở seam có thể xuất hiện đồng thời trên camera trước/sau; cần ca hard để viết policy một vật hai box và soát trùng lặp
+right,normal,20,"Trung bình: lề phải, xe đỗ song song, vạch ô đỗ",Mẫu nền cho camera hông phải; đối xứng với trái nhưng phải lấy riêng vì lắp đặt và calibration khác nhau
+right,hard,30,"Cao: seam góc trước-phải và sau-phải, người đi bộ trên vỉa hè sát xe, cột/curb che khuất",Cùng mức với trái vì có hai seam; ca khó ở rìa vòng kính dễ sai truncated/occluded và dễ bỏ sót vật nhỏ sát xe

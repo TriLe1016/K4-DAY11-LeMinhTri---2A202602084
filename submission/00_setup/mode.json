@@ -1,0 +1,31 @@
+{
+  "members": [
+    "ly",
+    "tri",
+    "vu"
+  ],
+  "assignments": {
+    "ly": "B4-mid",
+    "tri": "B2-mid",
+    "vu": "B3-dense"
+  },
+  "self": "tri",
+  "slice": "B2-mid",
+  "degrade": [
+    "k12",
+    "rework"
+  ],
+  "current_slice": "B2-mid",
+  "support_prefill": true,
+  "support_slice": "B2-mid",
+  "prefill_box_ids": [
+    "adasind_060000.jpg:1",
+    "adasind_060000.jpg:2",
+    "adasind_060000.jpg:3",
+    "adasind_060000.jpg:4",
+    "adasind_060000.jpg:5",
+    "adasind_086220.jpg:1",
+    "adasind_086220.jpg:2",
+    "adasind_086220.jpg:3"
+  ]
+}
